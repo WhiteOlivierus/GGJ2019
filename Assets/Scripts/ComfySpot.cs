@@ -7,19 +7,21 @@ public class ComfySpot : MonoBehaviour
     public int comfyAddTime;
     public int comfyTime;
 
+    public GameObject billboardText;
+
     private PlayerController pc;
     private float timer;
     private float comfyTimeTimer;
     private bool startTimers = false;
+    private bool inTrigger = false;
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            pc.inComfyZone = true;
-            print(startTimers);
-            startTimers = true;
             pc = col.GetComponent<PlayerController>();
+            billboardText.gameObject.SetActive(true);
+            inTrigger = true;
         }
     }
 
@@ -42,15 +44,17 @@ public class ComfySpot : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            inTrigger = false;
+            billboardText.gameObject.SetActive(false);
+            billboardText.GetComponent<TextMesh>().text = "Press E to relax";
             startTimers = false;
-            print(startTimers);
+            pc.inComfyZone = false;
             pc = col.GetComponent<PlayerController>();
         }
     }
 
     void FixedUpdate()
     {
-
         if (startTimers)
         {
             timer += 1f / 60f;
@@ -58,4 +62,21 @@ public class ComfySpot : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Interact") && inTrigger && !startTimers)
+        {
+            billboardText.GetComponent<TextMesh>().text = "Press E to stop relaxing";
+            startTimers = true;
+            pc.inComfyZone = true;
+        }
+        else if (Input.GetButtonDown("Interact") && inTrigger && startTimers)
+        {
+            billboardText.GetComponent<TextMesh>().text = "Press E to relax";
+            startTimers = false;
+            pc.inComfyZone = false;
+        }
+
+        billboardText.gameObject.transform.LookAt(2 * billboardText.gameObject.transform.position - Camera.main.transform.position);
+    }
 }

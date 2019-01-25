@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public float jumpVelocity;
     public float fallMultiplier;
+    [Space]
     public int comfyPoints = 100;
     public int notComfyPoints;
     public int nonComfyRemoveTime;
@@ -40,10 +41,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Floor"))
-        {
-            print(col.gameObject.layer);
             grounded = true;
-        }
     }
 
     void Move()
@@ -81,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void ChangePoints()
     {
-        if (!inComfyZone && nonComfyTimer < nonComfyRemoveTime)
+        if (!inComfyZone && nonComfyTimer > nonComfyRemoveTime)
         {
             nonComfyTimer = 0;
             comfyPoints -= notComfyPoints;

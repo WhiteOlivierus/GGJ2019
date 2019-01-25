@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8183783974982405482}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,6 +196,10 @@ MonoBehaviour:
   rotationSpeed: 50
   jumpVelocity: 10
   fallMultiplier: 2
+  comfyPoints: 100
+  notComfyPoints: 10
+  nonComfyRemoveTime: 1
+  inComfyZone: 0
 --- !u!136 &8183783974982405482
 CapsuleCollider:
   m_ObjectHideFlags: 0
