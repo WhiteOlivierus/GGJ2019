@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -22,18 +23,21 @@ public class PlayerController : MonoBehaviour
     private bool grounded = true;
     private Text scoreText;
     private Text stressScoreText;
+    private CapsuleCollider col;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         scoreText = GameObject.Find("ComfyScore").GetComponent<Text>();
         stressScoreText = GameObject.Find("StressScore").GetComponent<Text>();
+        col = GetComponent<CapsuleCollider>();
     }
 
     void Update()
     {
         Move();
         Jump();
+        Crouch();
         ChangePoints();
     }
 
@@ -78,6 +82,18 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+    }
+
+    void Crouch()
+    {
+        if (Input.GetButtonDown("Crouch"))
+        {
+            col.radius /= 2f;
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            col.radius *= 2f;
         }
     }
 
