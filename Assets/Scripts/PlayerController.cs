@@ -14,16 +14,20 @@ public class PlayerController : MonoBehaviour
     public int notComfyPoints;
     public int nonComfyRemoveTime;
     public bool inComfyZone = false;
+    [Space]
+    public int stressLevel = 0;
 
     private float nonComfyTimer;
     private Rigidbody rb;
     private bool grounded = true;
     private Text scoreText;
+    private Text stressScoreText;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         scoreText = GameObject.Find("ComfyScore").GetComponent<Text>();
+        stressScoreText = GameObject.Find("StressScore").GetComponent<Text>();
     }
 
     void Update()
@@ -85,5 +89,7 @@ public class PlayerController : MonoBehaviour
             comfyPoints -= notComfyPoints;
         }
         scoreText.text = comfyPoints.ToString();
+        stressScoreText.text = stressLevel.ToString();
     }
+
 }
