@@ -6,7 +6,8 @@ public class ComfySpot : MonoBehaviour
     public int comfyPoints;
     public int comfyAddTime;
     public int comfyTime;
-
+    public float comfySort;
+    [Space]
     public GameObject billboardText;
 
     private PlayerController pc;

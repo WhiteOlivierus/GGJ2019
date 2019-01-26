@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(rb.velocity);
         nonComfyTimer += 1f / 60f;
     }
 
@@ -110,7 +109,8 @@ public class PlayerController : MonoBehaviour
             {
                 foreach (Collider col in hitColliders)
                 {
-                    col.GetComponent<PointAtoB>().Investigate(transform.position, true);
+                    print(col.gameObject.name);
+                    col.gameObject.GetComponent<PointAtoB>().Investigate(transform.position, true);
                 }
             }
         }
