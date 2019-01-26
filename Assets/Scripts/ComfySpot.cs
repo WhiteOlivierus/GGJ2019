@@ -35,7 +35,8 @@ public class ComfySpot : MonoBehaviour
             else
             {
                 pc.inComfyZone = false;
-                Destroy(gameObject);
+                GameObject.FindObjectOfType<GameManager>().NextRoomZone();
+                gameObject.SetActive(false);
             }
             timer = 0;
         }

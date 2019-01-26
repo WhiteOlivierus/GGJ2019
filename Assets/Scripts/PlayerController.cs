@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         if (!inComfyZone && nonComfyTimer > nonComfyRemoveTime)
         {
             nonComfyTimer = 0;
-            comfyPoints -= notComfyPoints;
+            comfyPoints -= notComfyPoints * stressLevel;
         }
         scoreText.ChangeComfortNiveau(comfyPoints, maxComfy);
         stressScoreText.ChangeStressNiveau(stressLevel);
