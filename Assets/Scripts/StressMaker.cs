@@ -14,7 +14,7 @@ public class StressMaker : MonoBehaviour
             Vector3 direction = col.transform.position - transform.position;
             float angle = Vector3.Angle(direction, transform.forward);
 
-            if (angle < fieldOfView / 2)
+            if (angle < fieldOfView)
             {
                 print(angle);
                 col.GetComponent<PlayerController>().stressLevel += 1;

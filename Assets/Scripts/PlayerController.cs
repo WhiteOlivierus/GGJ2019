@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float fallMultiplier;
     [Space]
     public int comfyPoints = 100;
+    public int maxComfy;
     public int notComfyPoints;
     public int nonComfyRemoveTime;
     public bool inComfyZone = false;
@@ -23,15 +24,15 @@ public class PlayerController : MonoBehaviour
     private float nonComfyTimer;
     private Rigidbody rb;
     private bool grounded = true;
-    private Text scoreText;
-    private Text stressScoreText;
+    private ComfortUI scoreText;
+    private StressUI stressScoreText;
     private CapsuleCollider col;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        scoreText = GameObject.Find("ComfyScore").GetComponent<Text>();
-        stressScoreText = GameObject.Find("StressScore").GetComponent<Text>();
+        scoreText = GameObject.Find("ComfyScore").GetComponent<ComfortUI>();
+        stressScoreText = GameObject.Find("StressScore").GetComponent<StressUI>();
         col = GetComponent<CapsuleCollider>();
     }
 
@@ -123,8 +124,8 @@ public class PlayerController : MonoBehaviour
             nonComfyTimer = 0;
             comfyPoints -= notComfyPoints;
         }
-        scoreText.text = comfyPoints.ToString();
-        stressScoreText.text = stressLevel.ToString();
+        scoreText.ChangeComfortNiveau(comfyPoints, maxComfy);
+        stressScoreText.ChangeStressNiveau(stressLevel);
     }
 
 }
