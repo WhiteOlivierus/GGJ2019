@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93641b037c445b4d8957b67adf509f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   sprintSpeed: 2
   rotationSpeed: 50
   jumpVelocity: 10
@@ -200,6 +200,8 @@ MonoBehaviour:
   notComfyPoints: 10
   nonComfyRemoveTime: 1
   inComfyZone: 0
+  stressLevel: 0
+  miauwRadius: 10
 --- !u!136 &8183783974982405482
 CapsuleCollider:
   m_ObjectHideFlags: 0

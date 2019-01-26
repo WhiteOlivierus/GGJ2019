@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public bool inComfyZone = false;
     [Space]
     public int stressLevel = 0;
+    [Space]
+    public int miauwRadius;
 
     private float nonComfyTimer;
     private Rigidbody rb;
@@ -38,11 +40,13 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         Crouch();
+        Miauw();
         ChangePoints();
     }
 
     void FixedUpdate()
     {
+        print(rb.velocity);
         nonComfyTimer += 1f / 60f;
     }
 
@@ -60,13 +64,12 @@ public class PlayerController : MonoBehaviour
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
-        if (Input.GetButton("Sprint"))
+        if (Input.GetButton("Sprint") && grounded)
         {
             translation *= sprintSpeed;
         }
 
         transform.Translate(0, 0, translation);
-
         transform.Rotate(0, rotation, 0);
     }
 
@@ -75,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            rb.velocity = Vector3.up * jumpVelocity;
+            rb.velocity += Vector3.up * jumpVelocity;
             grounded = false;
         }
 
@@ -94,6 +97,22 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetButtonUp("Crouch"))
         {
             col.radius *= 2f;
+        }
+    }
+
+    void Miauw()
+    {
+        if (Input.GetButtonDown("Miauw"))
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, miauwRadius, 1 << 9);
+
+            if (hitColliders.Length > 0)
+            {
+                foreach (Collider col in hitColliders)
+                {
+                    col.GetComponent<PointAtoB>().Investigate(transform.position, true);
+                }
+            }
         }
     }
 

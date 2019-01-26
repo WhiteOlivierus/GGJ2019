@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &968030536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968030537}
+  - component: {fileID: 968030538}
+  - component: {fileID: 968030539}
+  m_Layer: 0
+  m_Name: StressMaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &968030537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968030536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 653280878232740305}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968030538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968030536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d4c38c3683ae14185f09c776668e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 20
+--- !u!136 &968030539
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968030536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.8409076
+  m_Height: 1.6842957
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &653280877017286953
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +133,7 @@ GameObject:
   - component: {fileID: 653280878232740270}
   - component: {fileID: 653280878232740307}
   - component: {fileID: 653280878232740306}
+  - component: {fileID: 653280877492949138}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -94,6 +154,7 @@ Transform:
   m_Children:
   - {fileID: 653280877667125345}
   - {fileID: 653280877017286954}
+  - {fileID: 968030537}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -192,3 +253,17 @@ MonoBehaviour:
   pointA: {fileID: 653280877667125345}
   pointB: {fileID: 653280877017286954}
   cycleTime: 5
+  currentTarget: {x: 0, y: 0, z: 0}
+--- !u!114 &653280877492949138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653280878232740269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d4c38c3683ae14185f09c776668e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
