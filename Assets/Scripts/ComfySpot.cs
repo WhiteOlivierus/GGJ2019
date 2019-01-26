@@ -8,8 +8,8 @@ public class ComfySpot : MonoBehaviour
     public int comfyTime;
     public float comfySort;
     [Space]
-    public GameObject billboardText;
-
+    public GameObject objectHighlight;
+    public Color highlightColor;
     private PlayerController pc;
     private float timer;
     private float comfyTimeTimer;
@@ -21,7 +21,7 @@ public class ComfySpot : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             pc = col.GetComponent<PlayerController>();
-            billboardText.gameObject.SetActive(true);
+            objectHighlight.GetComponent<Renderer>().material.color = highlightColor;
             inTrigger = true;
         }
     }
@@ -46,8 +46,7 @@ public class ComfySpot : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             inTrigger = false;
-            billboardText.gameObject.SetActive(false);
-            billboardText.GetComponent<TextMesh>().text = "Press E to relax";
+            objectHighlight.GetComponent<Renderer>().material.color = Color.white;
             startTimers = false;
             pc.inComfyZone = false;
             pc = col.GetComponent<PlayerController>();
@@ -67,17 +66,15 @@ public class ComfySpot : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && inTrigger && !startTimers)
         {
-            billboardText.GetComponent<TextMesh>().text = "Press E to stop relaxing";
+            objectHighlight.GetComponent<Renderer>().material.color = Color.white;
             startTimers = true;
             pc.inComfyZone = true;
         }
         else if (Input.GetButtonDown("Interact") && inTrigger && startTimers)
         {
-            billboardText.GetComponent<TextMesh>().text = "Press E to relax";
+            objectHighlight.GetComponent<Renderer>().material.color = highlightColor;
             startTimers = false;
             pc.inComfyZone = false;
         }
-
-        billboardText.gameObject.transform.LookAt(2 * billboardText.gameObject.transform.position - Camera.main.transform.position);
     }
 }
