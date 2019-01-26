@@ -9,6 +9,7 @@ public class SmoothFollow : MonoBehaviour
     public float height = 5.0f;
     public float heightDamping = 2.0f;
     public float rotationDamping = 3.0f;
+    public Vector3 offset;
 
 
     void LateUpdate()
@@ -32,6 +33,6 @@ public class SmoothFollow : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
 
-        transform.LookAt(target);
+        transform.LookAt(target.position + offset);
     }
 }
