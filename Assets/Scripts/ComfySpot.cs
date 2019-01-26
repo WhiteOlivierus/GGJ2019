@@ -31,7 +31,10 @@ public class ComfySpot : MonoBehaviour
         if (timer >= comfyAddTime)
         {
             if (comfyTimeTimer < comfyTime)
-                pc.comfyPoints += comfyPoints;
+            {
+                if (pc.comfyPoints < pc.maxComfy)
+                    pc.comfyPoints += comfyPoints;
+            }
             else
             {
                 pc.inComfyZone = false;

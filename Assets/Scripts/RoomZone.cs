@@ -29,5 +29,7 @@ public class RoomZone : MonoBehaviour
             default:
                 break;
         }
+        GameObject.FindObjectOfType<GameManager>().ShowRoom();
+        GameObject.FindObjectOfType<GameManager>().ShowLevel(level);
     }
 }
