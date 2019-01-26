@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: f2432d04c4410e7498a06e26e307552a
+guid: 9ad996ed60ba9e44d840d1fcaf54b0c6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: KitchenCabinet
+    100002: CornerKitchenPiece
     400000: //RootNode
-    400002: KitchenCabinet
-    2100000: No Name
+    400002: CornerKitchenPiece
+    2100000: Material
     2300000: //RootNode
-    2300002: KitchenCabinet
+    2300002: CornerKitchenPiece
     3300000: //RootNode
-    3300002: KitchenCabinet
-    4300000: KitchenCabinet
-    6400000: KitchenCabinet
+    3300002: CornerKitchenPiece
+    4300000: CornerKitchenPiece
+    6400000: CornerKitchenPiece
   externalObjects: {}
   materials:
     importMaterials: 1

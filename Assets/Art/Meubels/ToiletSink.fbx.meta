@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8791f9b3c36681343af9cfb8c4a5276b
+guid: f1a1b270aca77ff419d32df1f305ddb2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Fridge
+    4300000: ToiletSink
   externalObjects: {}
   materials:
     importMaterials: 1
