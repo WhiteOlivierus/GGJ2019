@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-guid: 9ad996ed60ba9e44d840d1fcaf54b0c6
+guid: c9920d9cf75ce00418eda1bda5d72c36
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: SinkKitchenPiece
     400000: //RootNode
+    400002: SinkKitchenPiece
     2100000: Material
     2300000: //RootNode
+    2300002: SinkKitchenPiece
     3300000: //RootNode
-    4300000: CornerKitchenPiece
+    3300002: SinkKitchenPiece
+    4300000: SinkKitchenPiece
+    6400000: SinkKitchenPiece
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
@@ -54,7 +59,7 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001

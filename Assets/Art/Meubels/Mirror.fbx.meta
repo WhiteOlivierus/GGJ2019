@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: c9920d9cf75ce00418eda1bda5d72c36
+guid: de599bd0ae7437b498a67ed0e5279811
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SinkKitchenPiece
+    4300000: Mirror
   externalObjects: {}
   materials:
     importMaterials: 1

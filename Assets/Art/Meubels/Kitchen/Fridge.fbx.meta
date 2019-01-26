@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: f2432d04c4410e7498a06e26e307552a
+guid: 8791f9b3c36681343af9cfb8c4a5276b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: KitchenCabinet
+    100002: Fridge
     400000: //RootNode
-    400002: KitchenCabinet
+    400002: Fridge
     2100000: No Name
     2300000: //RootNode
-    2300002: KitchenCabinet
+    2300002: Fridge
     3300000: //RootNode
-    3300002: KitchenCabinet
-    4300000: KitchenCabinet
-    6400000: KitchenCabinet
+    3300002: Fridge
+    4300000: Fridge
+    6400000: Fridge
   externalObjects: {}
   materials:
     importMaterials: 1
