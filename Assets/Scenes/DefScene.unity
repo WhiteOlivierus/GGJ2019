@@ -661,6 +661,12 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 4b23b447749e0134b8b9cdee553cd0f1, type: 2}
+--- !u!4 &681878267 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4438748441579349370, guid: b0c6d254dc396f447867cecceed194a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4438748441941709687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &918628592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1161,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4438748441224903514, guid: b0c6d254dc396f447867cecceed194a5,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 681878267}
+    - target: {fileID: 4438748441579349360, guid: b0c6d254dc396f447867cecceed194a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 205115133244826125, guid: b0c6d254dc396f447867cecceed194a5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7ce24bcb0e224ef42b4cbf05bd6fa77c, type: 2}
+    - target: {fileID: 205115133248969933, guid: b0c6d254dc396f447867cecceed194a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3474baad630485047ba5049be01cf5dd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c6d254dc396f447867cecceed194a5, type: 3}
 --- !u!1001 &8712922020333627148
