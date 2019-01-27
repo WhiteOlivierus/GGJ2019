@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public int nonComfyRemoveTime;
     public bool inComfyZone = false;
     [Space]
-    public int stressLevel = 0;
+    public int stressLevel;
     [Space]
     public int miauwRadius;
 
@@ -64,10 +64,10 @@ public class PlayerController : MonoBehaviour
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
-        if (Input.GetButton("Sprint") && grounded)
-        {
-            translation *= sprintSpeed;
-        }
+        // if (Input.GetButton("Sprint") && grounded)
+        // {
+        translation *= sprintSpeed;
+        // }
 
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);
