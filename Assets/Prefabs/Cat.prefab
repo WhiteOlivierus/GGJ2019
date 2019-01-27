@@ -408,31 +408,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c5e68b1a118aecb4dbf7283829c32f13, type: 3}
   - {fileID: 21300000, guid: e5639f7bc60569c44b5c570f20a3fc41, type: 3}
   - {fileID: 21300000, guid: 40f73f211b0e2364aac60371bc30c957, type: 3}
---- !u!114 &513383919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814239802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93641b037c445b4d8957b67adf509f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  sprintSpeed: 2.5
-  rotationSpeed: 125
-  jumpVelocity: 3.5
-  fallMultiplier: 1
-  comfyPoints: 100
-  maxComfy: 250
-  notComfyPoints: 5
-  nonComfyRemoveTime: 1
-  inComfyZone: 0
-  stressLevel: 1
-  miauwRadius: 0
-  anim: {fileID: 0}
 --- !u!54 &513383920
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -463,6 +438,31 @@ CapsuleCollider:
   m_Height: 4.7377377
   m_Direction: 2
   m_Center: {x: 0, y: 1.519297, z: -0.24201208}
+--- !u!114 &513383919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814239802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93641b037c445b4d8957b67adf509f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  sprintSpeed: 2.5
+  rotationSpeed: 125
+  jumpVelocity: 3.5
+  fallMultiplier: 1
+  comfyPoints: 100
+  maxComfy: 250
+  notComfyPoints: 5
+  nonComfyRemoveTime: 1
+  inComfyZone: 0
+  stressLevel: 1
+  miauwRadius: 0
+  anim: {fileID: 0}
 --- !u!1 &1816024739
 GameObject:
   m_ObjectHideFlags: 0
