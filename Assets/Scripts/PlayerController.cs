@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour
     public int maxComfy;
     public int notComfyPoints;
     public int nonComfyRemoveTime;
+    [HideInInspector]
     public bool inComfyZone = false;
-    [Space]
+    [HideInInspector]
     public int stressLevel;
     [Space]
     public int miauwRadius;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private ComfortUI scoreText;
     private StressUI stressScoreText;
     private CapsuleCollider col;
+    [HideInInspector]
+    public Animator anim;
 
     private void Start()
     {
@@ -34,13 +37,14 @@ public class PlayerController : MonoBehaviour
         scoreText = GameObject.Find("ComfyScore").GetComponent<ComfortUI>();
         stressScoreText = GameObject.Find("StressScore").GetComponent<StressUI>();
         col = GetComponent<CapsuleCollider>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         Move();
         Jump();
-        Crouch();
+        // Crouch();
         Miauw();
         ChangePoints();
     }
@@ -53,7 +57,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
             grounded = true;
+            anim.SetBool("Jump", false);
+        }
     }
 
     void Move()
@@ -64,10 +71,28 @@ public class PlayerController : MonoBehaviour
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
-        // if (Input.GetButton("Sprint") && grounded)
-        // {
-        translation *= sprintSpeed;
-        // }
+        if (translation > 0.01f && !anim.GetBool("Jump"))
+        {
+            anim.SetBool("Liggen", false);
+            if (Input.GetButton("Sprint"))
+            {
+                translation *= sprintSpeed;
+                anim.SetBool("Run", true);
+                anim.SetBool("Walk", false);
+            }
+            else
+            {
+                anim.SetBool("Walk", true);
+                anim.SetBool("Run", false);
+            }
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+        }
+
+        if (Input.GetButtonUp("Sprint"))
+            anim.SetBool("Run", false);
 
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);
@@ -79,6 +104,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rb.velocity += Vector3.up * jumpVelocity;
+            anim.SetBool("Jump", true);
+            anim.SetBool("Run", false);
             grounded = false;
         }
 

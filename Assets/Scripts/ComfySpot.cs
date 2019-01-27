@@ -75,12 +75,17 @@ public class ComfySpot : MonoBehaviour
             objectHighlight.GetComponent<Renderer>().material.color = lastColor;
             startTimers = true;
             pc.inComfyZone = true;
+            pc.anim.SetBool("Liggen", true);
+            pc.anim.SetBool("Run", false);
+            pc.anim.SetBool("Walk", false);
+            pc.anim.SetBool("Jump", false);
         }
         else if (Input.GetButtonDown("Interact") && inTrigger && startTimers)
         {
             objectHighlight.GetComponent<Renderer>().material.color = highlightColor;
             startTimers = false;
             pc.inComfyZone = false;
+            pc.anim.SetBool("Liggen", false);
         }
     }
 }
