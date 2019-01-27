@@ -10,6 +10,7 @@ public class ComfySpot : MonoBehaviour
     [Space]
     public GameObject objectHighlight;
     public Color highlightColor;
+
     private PlayerController pc;
     private float timer;
     private float comfyTimeTimer;
@@ -79,6 +80,8 @@ public class ComfySpot : MonoBehaviour
             pc.anim.SetBool("Run", false);
             pc.anim.SetBool("Walk", false);
             pc.anim.SetBool("Jump", false);
+            pc.GetComponent<AudioSource>().clip = pc.prrSound;
+            pc.GetComponent<AudioSource>().Play();
         }
         else if (Input.GetButtonDown("Interact") && inTrigger && startTimers)
         {

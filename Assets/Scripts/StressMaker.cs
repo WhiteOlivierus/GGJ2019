@@ -4,6 +4,7 @@ public class StressMaker : MonoBehaviour
 {
     public int cooldown;
     public int fieldOfView;
+    public AudioClip nani;
     private float timer;
     private bool startCooldown = false;
 
@@ -11,6 +12,7 @@ public class StressMaker : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" && !startCooldown)
         {
+            print("detected");
             Vector3 direction = col.transform.position - transform.position;
             float angle = Vector3.Angle(direction, transform.forward);
 
@@ -19,6 +21,8 @@ public class StressMaker : MonoBehaviour
                 print(angle);
                 col.GetComponent<PlayerController>().stressLevel += 1;
                 startCooldown = true;
+                GetComponent<AudioSource>().clip = nani;
+                GetComponent<AudioSource>().Play();
             }
         }
     }

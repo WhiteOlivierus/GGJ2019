@@ -1,6 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public int stressLevel;
     [Space]
     public int miauwRadius;
+    public AudioClip[] miauwSounds;
+    public AudioClip prrSound;
 
     private float nonComfyTimer;
     private Rigidbody rb;
@@ -47,6 +49,16 @@ public class PlayerController : MonoBehaviour
         // Crouch();
         Miauw();
         ChangePoints();
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
+        if (comfyPoints <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
     void FixedUpdate()
@@ -131,6 +143,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Miauw"))
         {
+            GetComponent<AudioSource>().clip = miauwSounds[Random.Range(0, miauwSounds.Length)];
+            GetComponent<AudioSource>().Play();
+
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, miauwRadius, 1 << 9);
 
             if (hitColliders.Length > 0)
@@ -139,6 +154,7 @@ public class PlayerController : MonoBehaviour
                 {
                     print(col.gameObject.name);
                     col.gameObject.GetComponent<PointAtoB>().Investigate(transform.position, true);
+
                 }
             }
         }
