@@ -37,12 +37,13 @@ public class SmoothFollow : MonoBehaviour
 
         //transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
 
-        RaycastHit[] hits = Physics.RaycastAll(target.position, target.position-newPos, 10);
+        RaycastHit[] hits = Physics.RaycastAll(target.position, newPos-target.position, 10f);
         foreach(RaycastHit hit in hits)
         {
             if(hit.transform.gameObject.tag != "player")
             {
-                newPos = hit.point - (target.position - newPos).normalized;
+                //newPos = hit.point - (target.position - newPos).normalized;
+                break;
             }
         }
 
