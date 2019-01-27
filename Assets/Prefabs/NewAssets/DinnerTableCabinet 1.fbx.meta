@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b4f00fe36f09df4cbd209f15251de82
+guid: d5345d7335d37184cb6a3390eaf23747
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,9 +7,9 @@ ModelImporter:
     100002: DinnerTableCabinet
     400000: //RootNode
     400002: DinnerTableCabinet
-    2100000: Material.001
-    2100002: Material.004
-    2100004: Material.003
+    2100000: Material.003
+    2100002: Material.001
+    2100004: Material.004
     2300000: //RootNode
     2300002: DinnerTableCabinet
     3300000: //RootNode
