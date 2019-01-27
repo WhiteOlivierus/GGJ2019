@@ -2383,6 +2383,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2311586194908247600, guid: 0ff6e11fb88234c41b9c6803d3be942a,
         type: 3}
       propertyPath: stressNiveau.Array.size
@@ -2417,6 +2418,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of dca4f8e... Collider fix
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff6e11fb88234c41b9c6803d3be942a, type: 3}
 --- !u!1001 &239728949
@@ -11550,6 +11553,7 @@ PrefabInstance:
     - target: {fileID: 400004, guid: a4c673a37ab2be246b0dd9023978db5f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.116
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: a4c673a37ab2be246b0dd9023978db5f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11558,6 +11562,8 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a4c673a37ab2be246b0dd9023978db5f, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+=======
+>>>>>>> parent of dca4f8e... Collider fix
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: a4c673a37ab2be246b0dd9023978db5f, type: 3}
       propertyPath: m_Materials.Array.data[0]
