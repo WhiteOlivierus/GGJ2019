@@ -15,12 +15,14 @@ public class ComfySpot : MonoBehaviour
     private float comfyTimeTimer;
     private bool startTimers = false;
     private bool inTrigger = false;
+    private Color lastColor;
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
             pc = col.GetComponent<PlayerController>();
+            lastColor = objectHighlight.GetComponent<Renderer>().material.color;
             objectHighlight.GetComponent<Renderer>().material.color = highlightColor;
             inTrigger = true;
         }
@@ -50,7 +52,7 @@ public class ComfySpot : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             inTrigger = false;
-            objectHighlight.GetComponent<Renderer>().material.color = Color.white;
+            objectHighlight.GetComponent<Renderer>().material.color = lastColor;
             startTimers = false;
             pc.inComfyZone = false;
             pc = col.GetComponent<PlayerController>();
@@ -70,15 +72,20 @@ public class ComfySpot : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && inTrigger && !startTimers)
         {
-            objectHighlight.GetComponent<Renderer>().material.color = Color.white;
+            objectHighlight.GetComponent<Renderer>().material.color = lastColor;
             startTimers = true;
             pc.inComfyZone = true;
+            pc.anim.SetBool("Liggen", true);
+            pc.anim.SetBool("Run", false);
+            pc.anim.SetBool("Walk", false);
+            pc.anim.SetBool("Jump", false);
         }
         else if (Input.GetButtonDown("Interact") && inTrigger && startTimers)
         {
             objectHighlight.GetComponent<Renderer>().material.color = highlightColor;
             startTimers = false;
             pc.inComfyZone = false;
+            pc.anim.SetBool("Liggen", false);
         }
     }
 }

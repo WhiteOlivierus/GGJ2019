@@ -53,6 +53,9 @@ ModelImporter:
     100094: Toes.R
     100096: Toes.R_end
     100098: Toes.R_end_end
+    100100: Armature
+    100102: Cube
+    100104: Sun
     400000: Arm_Lower.L
     400002: Arm_Lower.R
     400004: Arm_Upper.L
@@ -103,13 +106,19 @@ ModelImporter:
     400094: Toes.R
     400096: Toes.R_end
     400098: Toes.R_end_end
+    400100: Armature
+    400102: Cube
+    400104: Sun
     2100000: Material.003
+    2100002: Material
     4300000: Cube.001
+    4300002: Cube
     7400000: Walk
     7400002: Armature.001|ArmatureAction
     7400004: Armature.001|SunAction
     9500000: //RootNode
     13700000: Cube.001
+    13700002: Cube
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

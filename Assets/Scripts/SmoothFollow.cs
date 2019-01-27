@@ -28,10 +28,27 @@ public class SmoothFollow : MonoBehaviour
 
         var currentRotation = Quaternion.Euler(0, currentRotationAngle, 0);
 
-        transform.position = target.position;
-        transform.position -= currentRotation * Vector3.forward * distance;
+        Vector3 newPos = target.position;
+        newPos -= currentRotation * Vector3.forward * distance;
+        newPos.y = currentHeight;
 
-        transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
+        //transform.position = target.position;
+        //transform.position -= currentRotation * Vector3.forward * distance;
+
+        //transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
+
+        RaycastHit[] hits = Physics.RaycastAll(target.position, newPos-target.position, 10f);
+        foreach(RaycastHit hit in hits)
+        {
+            if(hit.transform.gameObject.tag != "player")
+            {
+                //newPos = hit.point - (target.position - newPos).normalized;
+                break;
+            }
+        }
+
+
+        transform.position = newPos;
 
         transform.LookAt(target.position + offset);
     }
