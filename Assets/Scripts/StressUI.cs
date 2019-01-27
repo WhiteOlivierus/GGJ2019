@@ -13,7 +13,10 @@ public class StressUI : MonoBehaviour
             if (n < stressNiveau.Length)
             {
                 GetComponent<Image>().sprite = stressNiveau[n];
-                transform.GetChild(0).Rotate(new Vector3(0, 0, -40f));
+
+                // transform.GetChild(0).Rotate(new Vector3(0, 0, -40f));
+
+
             }
             lastN = n;
         }
