@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d4c38c3683ae14185f09c776668e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
-  fieldOfView: 75
+  cooldown: 5
+  fieldOfView: 65
 --- !u!136 &968030539
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653280877017286953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: 0, z: -11.83}
+  m_LocalPosition: {x: 10.52, y: -0.28, z: -0.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 653280878232740305}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653280877667125344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.58, y: 0, z: 18.33}
+  m_LocalPosition: {x: -0.8, y: 0, z: 2.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 653280878232740305}
@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 653280878232740269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.72, y: 2.5, z: -21.52}
-  m_LocalScale: {x: 1, y: 4, z: 1}
+  m_LocalScale: {x: 0.59900045, y: 2.3960018, z: 0.59900045}
   m_Children:
   - {fileID: 653280877667125345}
   - {fileID: 653280877017286954}
@@ -227,11 +227,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 1.7
+  m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 300
+  m_StoppingDistance: 0.4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 653280877667125345}
   pointB: {fileID: 653280877017286954}
-  cycleTime: 5
+  cycleTime: 10
   currentTarget: {x: 0, y: 0, z: 0}
   investigating: 0
   investigationTime: 20
